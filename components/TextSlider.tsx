@@ -5,15 +5,15 @@ const Slides = ({ type }) => {
     if (type == "sm") {
         height = "h-7.5"
         textSize = "text-3xl leading-none"
-        animate = "animate-text-slide-sm"
+        animate = "animate-text-slide-sm "
     } else if (type == "md") {
         height = "h-9"
         textSize = "text-4xl leading-none"
         animate = "animate-text-slide-md"
     } else {
         height = "h-14 m-0"
-        textSize = "text-5xl"
-        animate = "animate-text-slide-lg leading-none "
+        textSize = "text-5xl leading-none"
+        animate = "animate-text-slide-lg  "
     }
     const slider = dataSection1.textSlides.map((textSlide, index) => (
         <div key={index} className={`font-bold font-roboto text-center box-border ${index == 0 ? animate : " "} ${height + " " + textSize}`}>
@@ -21,7 +21,7 @@ const Slides = ({ type }) => {
         </div>
     ))
     return (
-        <div className={`slider overflow-hidden ${height}`}>
+        <div className={`slider overflow-hidden ${height} min-h-full`}>
             {slider}
         </div>
     )
