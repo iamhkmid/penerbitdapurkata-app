@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Main from '../components/layouts/Main'
-import Navbar from '../components/layouts/Navbar'
+import Main from '../src/components/layouts/Main'
+import Navbar from '../src/components/layouts/Navbar'
+import NavContextProvider from '../src/contexts/NavContextProvider'
 
 export default function Home() {
   return (
@@ -9,8 +10,10 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <Main />
+      <NavContextProvider>
+        <Navbar />
+        <Main />
+      </NavContextProvider>
 
     </>
   )

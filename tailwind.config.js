@@ -14,33 +14,33 @@ module.exports = {
       keyframes: {
         'text-slide-sm': {
           '0%': { 'margin-top': '-91px' },
-          '2%': { 'margin-top': '-61px' },
+          '1%': { 'margin-top': '-61px' },
           '33%': { 'margin-top': '-61px' },
-          '35%': { 'margin-top': '-31px' },
+          '34%': { 'margin-top': '-31px' },
           '66%': { 'margin-top': '-31px' },
-          '68%, 100%': { 'margin-top': '-1px' },
+          '67%, 100%': { 'margin-top': '-1px' },
         },
         'text-slide-md': {
           '0%': { 'margin-top': '-109px' },
-          '2%': { 'margin-top': '-73px' },
+          '1%': { 'margin-top': '-73px' },
           '33%': { 'margin-top': '-73px' },
-          '35%': { 'margin-top': '-37px' },
+          '34%': { 'margin-top': '-37px' },
           '66%': { 'margin-top': '-37px' },
-          '68%, 100%': { 'margin-top': '-1px' },
+          '67%, 100%': { 'margin-top': '-1px' },
         },
         'text-slide-lg': {
           '0%': { 'margin-top': '-168px' },
-          '2%': { 'margin-top': '-112px' },
+          '1%': { 'margin-top': '-112px' },
           '33%': { 'margin-top': '-112px' },
-          '35%': { 'margin-top': '-56px' },
+          '34%': { 'margin-top': '-56px' },
           '66%': { 'margin-top': '-56px' },
-          '68%, 100%': { 'margin-top': '0px' },
+          '67%, 100%': { 'margin-top': '0px' },
         }
       },
       animation: {
-        'text-slide-sm': 'text-slide-sm 7s linear infinite',
-        'text-slide-md': 'text-slide-md 7s linear infinite',
-        'text-slide-lg': 'text-slide-lg 7s linear infinite'
+        'text-slide-sm': 'text-slide-sm 10s linear infinite',
+        'text-slide-md': 'text-slide-md 10s linear infinite',
+        'text-slide-lg': 'text-slide-lg 10s linear infinite'
       },
       height: {
         '7.5': '30px',
