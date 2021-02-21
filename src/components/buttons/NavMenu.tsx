@@ -3,7 +3,7 @@ import { NavContext } from "../../contexts/NavContextProvider"
 import { useWindowScroll } from "react-use"
 
 const NavMenu = ({ addClass }) => {
-    const { navDatas, secRef, changeNavBtn, navBtn } = useContext(NavContext)
+    const { navDatas, secRef, changeNavBtn, navBtn, changeNavToggle } = useContext(NavContext)
     const { y: pageYOffset } = useWindowScroll()
     const btnHandler = (value) => {
         navDatas.forEach((data, index) => {
@@ -20,6 +20,7 @@ const NavMenu = ({ addClass }) => {
         } else if (pageYOffset >= 400) {
             changeNavBtn(1)
         }
+        changeNavToggle(false)
     }, [pageYOffset])
 
     const menu = navDatas.map((data, index) => <a onClick={() => btnHandler(index)} id={`#nav${index}`} key={index}
