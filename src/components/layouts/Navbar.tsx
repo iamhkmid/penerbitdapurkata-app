@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import { NavContext } from "../../contexts/NavContextProvider";
 import NavMenu from "../buttons/NavMenu"
 
 const Navbar = () => {
+    const { navToggle, changeNavToggle } = useContext(NavContext)
+    const toggleHandler = () => {
+        navToggle == true ? changeNavToggle(false) : changeNavToggle(true)
+    }
     return (
         <nav className="shadow-md fixed w-full bg-white font-poppins">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +28,8 @@ const Navbar = () => {
 
                     <div className="-mr-2 flex md:hidden">
                         <button
-                            className="bg-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            onClick={toggleHandler}
+                            className={`${navToggle === true ? "bg-purple-400 text-gray-800" : "bg-gray-200 text-gray-800 "}  inline-flex items-center justify-center p-2 rounded-full   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-purple-500 focus:ring-white`}>
                             <span className="sr-only">Open main menu</span>
 
                             <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -39,9 +46,8 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className=" md:hidden">
+            <div className={`${navToggle === true ? "block" : "hidden"} md:hidden`} >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-
                     <NavMenu addClass="block" />
                 </div>
 
