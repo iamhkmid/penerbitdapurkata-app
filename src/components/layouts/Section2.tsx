@@ -36,7 +36,7 @@ const Section2 = forwardRef(() => {
         <div ref={sectionRef} className=" py-14 bg-gray-50 font-roboto bg-gradient-to-r from-gray-200 to-gray-50">
             <h1 className="text-3xl font-bold uppercase text-center pt-3">Spesifikasi Naskah</h1>
             <hr className="text-gray-500 border-t-2 border-gray-300 mx-24 pb-8"></hr>
-            <div className="flex flex-wrap justify-items-center items-center place-content-evenly">
+            <div className="flex flex-wrap justify-items-center items-center place-content-evenly px-5">
                 {naskahSpecs.map((data, index) => (
                     <div key={data.name} className="group bg-white text-gray-900 hover:bg-gray-50 border-transparent border-4 hover:border-indigo-200 rounded-md shadow-md cursor-default my-5">
 
