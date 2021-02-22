@@ -2,19 +2,20 @@ import { useContext } from "react";
 import { NavContext } from "../../contexts/NavContextProvider";
 import NavMenu from "../buttons/NavMenu"
 
+
 const Navbar = () => {
     const { navToggle, changeNavToggle } = useContext(NavContext)
     const toggleHandler = () => {
         navToggle == true ? changeNavToggle(false) : changeNavToggle(true)
     }
     return (
-        <nav className="shadow-md fixed w-full bg-white font-poppins">
+        <nav className="shadow-md fixed w-full bg-white font-poppins bg-gradient-to-r from-gray-50 to-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <img className="h-10 cursor-pointer" src="/icons/dapurkata.svg" alt="Workflow"></img>
+                            <img className="h-10 cursor-pointer" src="/icons/dapurkata.svg" alt="logo"></img>
                         </div>
 
                     </div>
