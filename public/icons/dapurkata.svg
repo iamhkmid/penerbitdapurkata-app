@@ -27,9 +27,9 @@
      inkscape:window-height="716"
      id="namedview18"
      showgrid="false"
-     inkscape:zoom="0.20365954"
-     inkscape:cx="1593.8937"
-     inkscape:cy="582.80905"
+     inkscape:zoom="1.1520723"
+     inkscape:cx="2237.7611"
+     inkscape:cy="289.14029"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -71,23 +71,23 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:77.8686px;line-height:1.25;font-family:sans-serif;fill:#030326;fill-opacity:1;stroke:none;stroke-width:6.3857"
-         x="159.27773"
+         x="158.82623"
          y="102.75002"
          id="text877"><tspan
            sodipodi:role="line"
            id="tspan875"
-           x="159.27773"
+           x="158.82623"
            y="102.75002"
-           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Semi-Bold';fill:#030326;fill-opacity:1;stroke-width:6.3857">Dapurkata</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Semi-Bold';fill:#030326;fill-opacity:1;stroke-width:6.3857">DapurKata</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:33.3669px;line-height:1.25;font-family:sans-serif;fill:#030326;fill-opacity:1;stroke:none;stroke-width:2.73629"
-         x="162.34834"
+         x="161.89685"
          y="40.989555"
          id="text857"><tspan
            sodipodi:role="line"
            id="tspan855"
-           x="162.34834"
+           x="161.89685"
            y="40.989555"
            style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Semi-Bold';fill:#030326;fill-opacity:1;stroke-width:2.73629">Penerbit</tspan></text>
     </g>

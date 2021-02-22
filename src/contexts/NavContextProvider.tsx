@@ -10,6 +10,7 @@ type NavContextType = {
 };
 
 
+
 export const NavContext = createContext<NavContextType | undefined>(undefined);
 
 const NavContextProvider: FC<ReactNode> = ({ children }) => {

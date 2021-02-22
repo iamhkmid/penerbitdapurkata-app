@@ -2,20 +2,15 @@ import { dataSection1 } from "../data/dataMain"
 import TextSlider from "../TextSlider"
 import React, { forwardRef, MutableRefObject, SyntheticEvent, useContext, useEffect, useImperativeHandle, useRef, useState } from "react"
 import NavContextProvider, { NavContext } from "../../contexts/NavContextProvider"
+import { getSectionEl } from "./getSectionEl"
 
-export type sec1Handle = {
-    refHandler: () => void
-}
 
 const Section1 = forwardRef(() => {
     const { secRef } = useContext(NavContext)
     const sectionRef = useRef<HTMLDivElement>(null)
     const [scSc, setScSc] = useState(null)
-    useImperativeHandle(secRef[0], (): sec1Handle => ({
-        refHandler() {
-            return sectionRef.current.offsetTop
-        }
-    }))
+    useImperativeHandle(secRef[0], () => getSectionEl(sectionRef)
+    )
 
 
 
@@ -29,11 +24,10 @@ const Section1 = forwardRef(() => {
                     <h1 className="font-bold text-sm md:text-base text-center px-5 md:px-40 text-gray-700" >
                         Penerbit Buku Pertama Resmi di Bangka Belitung
                         </h1>
-                    <h1 className="font-extrabold text-xl md:text-4xl text-center px-5 md:px-40 mt-20 text-gray-900" >
+                    <h1 className="font-extrabold text-2xl md:text-4xl text-center px-5 md:px-40 mt-10 md:mt-20 text-gray-900" >
                         Pilih paket terbitmu & rasakanlah kemudahan menerbitkan karya. Karena di sini, naskahmu diracik dengan sempurna.
                         </h1>
-                    <div className="text-3xl">aaaa{scSc}</div>
-                    <h1 className="font-normal text-base md:text-xl lg:text-xl text-center mt-20 px-5 md:px-48 text-gray-900">
+                    <h1 className="font-normal text-base md:text-xl lg:text-xl text-center mt-10 md:mt-20 px-5 md:px-48 text-gray-900">
                         "Dalam banyak diskusi tentang perubahan zaman, buku selalu mendapat tempat khusus sebagai energi penggerak manusia untuk menciptakan sesuatu. Dari sini, kita paham bahwa buku selalu hadir sebagai bagian penting dalam peradaban.Bersama buku, kita menyempurnakan kemanusiaan.Bersama buku, kita mendorong perubahan.Tindakan ini dimulai dari kita, dimulai dari Anda.Mari berkolaborasi menciptakan buku - buku terbaik! Buku Anda akan menjadi bagian dari sejarah."
                         </h1>
                 </div>
