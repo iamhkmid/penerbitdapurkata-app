@@ -5,36 +5,38 @@ import { getSectionEl } from "./getSectionEl"
 import { FaBookOpen, } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 
+const naskahSpecs = [
+    {
+        name: 'isi',
+        warna: "Hitam-Putih",
+        jenisKertas: "Bookpaper 72g/HVS 70g/HVS 80g",
+        ukuran: "A5"
+    },
+    {
+        name: "sampul",
+        warna: "Fullcolor",
+        jenisKertas: "Ivory 260 gram",
+        laminasi: "Dof/Glossy"
+    },
+    {
+        name: "finalisasi",
+        values: ["Sampul kertas (softcover binding)",
+            "Penjilidan (Binding)",
+            "shrink"]
+    }
+]
+
 const Section2 = forwardRef(() => {
     const { secRef } = useContext(NavContext)
     const sectionRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(secRef[1], () => getSectionEl(sectionRef)
     )
-    const naskahSpecs = [
-        {
-            name: 'isi',
-            warna: "Hitam-Putih",
-            jenisKertas: "Bookpaper 72g/HVS 70g/HVS 80g",
-            ukuran: "A5"
-        },
-        {
-            name: "sampul",
-            warna: "Fullcolor",
-            jenisKertas: "Ivory 260 gram",
-            laminasi: "Dof/Glossy"
-        },
-        {
-            name: "finalisasi",
-            values: ["Sampul kertas (softcover binding)",
-                "Penjilidan (Binding)",
-                "shrink"]
-        }
-    ]
+
 
     return (
-        <div ref={sectionRef} className=" py-14 bg-gray-50 font-roboto bg-gradient-to-r from-gray-200 to-gray-50">
-            <h1 className="text-3xl font-bold uppercase text-center pt-3">Spesifikasi Naskah</h1>
+        <div ref={sectionRef} className="py-14 font-roboto bg-gradient-to-r from-gray-200 to-gray-50">
+            <h1 className="text-3xl font-bold uppercase text-center pt-3 text-gray-900">Spesifikasi Naskah</h1>
             <hr className="text-gray-500 border-t-2 border-gray-300 mx-24 pb-8"></hr>
             <div className="flex flex-wrap justify-items-center items-center place-content-evenly px-5">
                 {naskahSpecs.map((data, index) => (
