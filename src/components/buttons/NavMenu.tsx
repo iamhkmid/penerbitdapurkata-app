@@ -18,7 +18,7 @@ const NavMenu = ({ addClass }) => {
 
     useEffect(() => {
         const position = navDatas.map((data, index) => {
-            return secRef[index].current.offsetTop + secRef[index].current.offsetHeight - 50
+            return secRef[index].current.offsetTop + secRef[index].current.offsetHeight - 200
         })
         if (pageYOffset < position[0]) {
             changeNavBtn(0)
