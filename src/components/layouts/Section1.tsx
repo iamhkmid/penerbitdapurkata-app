@@ -32,12 +32,12 @@ const Section1 = forwardRef(() => {
                         </h1>
                             <div className="flex place-content-center my-7 font-roboto">
                                 <button className="bg-gray-800 mx-5 text-white text-sm md:text-sm px-3 md:px-5 py-2 md:py-3 font-normal rounded-md uppercase">Pesan Sekarang</button>
-                                <button className="bg-purple-600 mx-5 text-white text-sm md:text-sm px-3 md:px-5 py-2 md:py-3 font-normal rounded-md uppercase">Kenali Lebih Jauh</button>
+                                <button className="bg-gray-800 mx-5 text-white text-sm md:text-sm px-3 md:px-5 py-2 md:py-3 font-normal rounded-md uppercase">Kenali Lebih Jauh</button>
                             </div>
                         </div>
                         <div className="md:w-1/2 flex flex-col items-center ">
                             <img className="max-h-full" src="/assets/banner.svg" alt="logo"></img>
-                            <a className="font-roboto text-sm text-gray-400 text-center" href="http://www.freepik.com">Designed by Freepik</a>
+                            <a className="font-roboto text-xs md:text-sm text-gray-400 text-center" href="http://www.freepik.com">Designed by Freepik</a>
                         </div>
                     </div>
                 </div>
