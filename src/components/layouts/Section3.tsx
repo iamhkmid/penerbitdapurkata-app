@@ -39,28 +39,28 @@ const Section3 = forwardRef(() => {
         <div ref={sectionRef} className="py-14 bg-gradient-to-bl from-gray-800 to-gray-500 font-roboto text-gray-50">
             <h1 className="text-3xl font-bold uppercase text-center pt-3">Paket Harga</h1>
             <hr className="border-t-2 border-gray-500 mx-24 pb-8"></hr>
-            <div className="shadow overflow-x-scroll border border-gray-200 sm:rounded-lg mx-2 text-gray-900">
-                <table className="w-full divide-y divide-gray-200">
+            <div className="shadow-md md:overflow-hidden overflow-x-scroll border border-gray-200 sm:rounded-lg mx-2 md:mx-20 text-gray-900">
+                <table className="w-full divide-y divide-gray-200 text-center">
                     <thead className="bg-gray-50">
                         <tr>
-                            <th rowSpan={2} className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">BANYAK HALAMAN</th>
-                            <th colSpan={7} className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">JUMLAH & HARGA PER EKSEMPLAR</th>
+                            <th rowSpan={2} className="px-2 py-3 text-xs font-medium text-gray-600 uppercase tracking-wider w-1/12">BANYAK HALAMAN</th>
+                            <th colSpan={7} className="px-2 py-3 text-xs font-medium text-gray-600 uppercase tracking-wider ">JUMLAH & HARGA PER EKSEMPLAR</th>
                         </tr>
                         <tr>
                             {paketHarga.eks.map((data, index) => (
-                                <th key={data} className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{data}</th>
+                                <th key={data} className="px-2 py-3 text-xs font-medium text-gray-600 uppercase tracking-wider">{data}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody className="bg-white text-xs divide-y divide-gray-200">
                         {paketHarga.hal.map((hal, i) => (
                             <tr key={`${hal}`}>
-                                <td className="px-2 py-4 whitespace-nowrap">{hal}</td>
+                                <td className="px-2 py-4 whitespace-nowrap font-medium text-gray-600">{hal}</td>
                                 {paketHarga.eks.map((eks, j) => (
                                     paketHarga.data.map((data, k) => {
                                         if (hal == data.hal && eks == data.eks) {
                                             return (
-                                                <td key={data.harga} className=" px-2 py-4 whitespace-nowrap">
+                                                <td key={data.harga} className=" px-2 py-4 whitespace-nowrap font-medium">
                                                     < NumberFormat value={data.harga} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp.'} />
                                                 </td>
                                             )
