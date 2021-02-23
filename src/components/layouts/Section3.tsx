@@ -61,7 +61,7 @@ const Section3 = forwardRef(() => {
                                         if (hal == data.hal && eks == data.eks) {
                                             return (
                                                 <td key={data.harga} className=" px-2 py-4 whitespace-nowrap font-medium">
-                                                    < NumberFormat value={data.harga} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp.'} />
+                                                    < NumberFormat value={data.harga} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} />
                                                 </td>
                                             )
                                         }
