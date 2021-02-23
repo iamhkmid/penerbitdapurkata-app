@@ -37,7 +37,7 @@ const Section3 = forwardRef(() => {
 
 
     return (
-        <div ref={sectionRef} className="py-14 bg-gradient-to-bl from-gray-800 to-gray-500 font-roboto text-gray-50 h-screen flex flex-col place-content-center">
+        <div ref={sectionRef} className="py-14 bg-gradient-to-b from-gray-600 to-gray-300 font-roboto text-gray-50 h-screen flex flex-col place-content-center">
             <div>
                 <h1 className="text-3xl font-bold uppercase text-center ">Paket Harga</h1>
                 <hr className="border-t-2 border-gray-500 mx-24 pb-5"></hr>

@@ -3,7 +3,12 @@ import TextSlider from "../TextSlider"
 import React, { forwardRef, MutableRefObject, SyntheticEvent, useContext, useEffect, useImperativeHandle, useRef, useState } from "react"
 import NavContextProvider, { NavContext } from "../../contexts/NavContextProvider"
 import { getSectionEl } from "./getSectionEl"
+import MainBtn from "../buttons/MainBtn"
 
+const BtnData = [
+    { name: "Pesan Sekarang", link: "https://wa.link/lc00fi" },
+    { name: "Kenali Lebih Jauh", link: "btnHandler" },
+]
 
 const Section1 = forwardRef(() => {
     const { secRef } = useContext(NavContext)
@@ -11,8 +16,10 @@ const Section1 = forwardRef(() => {
     const [scSc, setScSc] = useState(null)
     useImperativeHandle(secRef[0], () => getSectionEl(sectionRef)
     )
-
-
+    const btnHandler = () => {
+        const position = secRef[1].current.offsetTop - 50
+        window.scrollTo({ top: position, behavior: "smooth" })
+    }
 
     return (
         <div className="bg-white min-h-screen">
@@ -31,11 +38,16 @@ const Section1 = forwardRef(() => {
                                 "Dalam banyak diskusi tentang perubahan zaman, buku selalu mendapat tempat khusus sebagai energi penggerak manusia untuk menciptakan sesuatu. Dari sini, kita paham bahwa buku selalu hadir sebagai bagian penting dalam peradaban.Bersama buku, kita menyempurnakan kemanusiaan.Bersama buku, kita mendorong perubahan.Tindakan ini dimulai dari kita, dimulai dari Anda.Mari berkolaborasi menciptakan buku - buku terbaik! Buku Anda akan menjadi bagian dari sejarah."
                         </h1>
                             <div className="flex place-content-center my-7 font-roboto">
-                                <button className="bg-gray-800 mx-5 text-white text-sm md:text-sm px-3 md:px-5 py-2 md:py-3 font-normal rounded-md uppercase">Pesan Sekarang</button>
-                                <button className="bg-gray-800 mx-5 text-white text-sm md:text-sm px-3 md:px-5 py-2 md:py-3 font-normal rounded-md uppercase">Kenali Lebih Jauh</button>
+                                {BtnData.map((data, i) => {
+                                    const btnLink = data.link === "btnHandler" ?
+                                        <MainBtn link={undefined} handler={btnHandler} name={data.name} />
+                                        : <MainBtn link={data.link} handler={undefined} name={data.name} />
+
+                                    return btnLink
+                                })}
                             </div>
                         </div>
-                        <div className="md:w-1/2 flex flex-col items-center ">
+                        <div className="md:w-1/2 flex flex-col items-center md:px-5">
                             <img className="max-h-full" src="/assets/banner.svg" alt="logo"></img>
                             <a className="font-roboto text-xs md:text-sm text-gray-400 text-center" href="http://www.freepik.com">Designed by Freepik</a>
                         </div>
