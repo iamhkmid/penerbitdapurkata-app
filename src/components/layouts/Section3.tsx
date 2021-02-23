@@ -4,6 +4,7 @@ import { NavContext } from "../../contexts/NavContextProvider"
 import { getSectionEl } from "./getSectionEl"
 
 const paketHarga = {
+    message: "Pilih paket terbitmu & rasakanlah kemudahan menerbitkan karya.",
     eks: [30, 50, 100, 125, 150, 200],
     hal: [80, 100, 120, 150, 200],
     data: [
@@ -38,8 +39,9 @@ const Section3 = forwardRef(() => {
     return (
         <div ref={sectionRef} className="py-14 bg-gradient-to-bl from-gray-800 to-gray-500 font-roboto text-gray-50 h-screen flex flex-col place-content-center">
             <div>
-                <h1 className="text-3xl font-bold uppercase text-center pt-3">Paket Harga</h1>
-                <hr className="border-t-2 border-gray-500 mx-24 pb-8"></hr>
+                <h1 className="text-3xl font-bold uppercase text-center ">Paket Harga</h1>
+                <hr className="border-t-2 border-gray-500 mx-24 pb-5"></hr>
+                <h1 className="text-lg text-center font-normal mb-10 font-poppins">Pilih paket terbitmu & rasakanlah kemudahan menerbitkan karya.</h1>
                 <div className="shadow-md md:overflow-hidden overflow-x-scroll sm:rounded-lg mx-2 md:mx-20 text-gray-900">
                     <table className="w-full divide-y divide-gray-200 text-center ">
                         <thead className="bg-gray-50  border border-gray-300">
