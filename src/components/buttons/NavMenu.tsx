@@ -18,14 +18,16 @@ const NavMenu = ({ addClass }) => {
 
     useEffect(() => {
         const position = navDatas.map((data, index) => {
-            return secRef[index].current.offsetTop + secRef[index].current.offsetHeight - 200
+            return secRef[index].current.offsetTop + secRef[index].current.offsetHeight - 100
         })
         if (pageYOffset < position[0]) {
             changeNavBtn(0)
         } else if (pageYOffset >= position[0] && pageYOffset < position[1]) {
             changeNavBtn(1)
-        } else if (position[2] >= position[2]) {
+        } else if (pageYOffset >= position[1] && pageYOffset < position[2]) {
             changeNavBtn(2)
+        } else if (pageYOffset >= position[2] && pageYOffset < position[3]) {
+            changeNavBtn(3)
         }
 
         changeNavToggle(false)

@@ -15,7 +15,7 @@ export const NavContext = createContext<NavContextType | undefined>(undefined);
 
 const NavContextProvider: FC<ReactNode> = ({ children }) => {
 
-    const [navDatas, setNavDatas] = useState(["Home", "Spesifikasi", "Paket"])
+    const [navDatas, setNavDatas] = useState(["Home", "Spesifikasi", "Paket", "Layanan"])
     const [navBtn, setNavBtn] = useState(0)
     const [navToggle, setNavToggle] = useState(false)
     const secRef = navDatas.map(() => {
