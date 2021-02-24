@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Footer from '../src/components/Footer'
+import Footer from '../src/components/layouts/Footer'
 import Main from '../src/components/layouts/Main'
 import Navbar from '../src/components/layouts/Navbar'
 import NavContextProvider from '../src/contexts/NavContextProvider'
