@@ -26,7 +26,7 @@ const accounts = [
 ]
 
 const accountList = accounts.map((account) => (
-    <span>
+    <span key={account.name}>
         <a href={account.link} key={account.id}>
             <div className="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1 mx-1">
                 <Icons name={account.name} classname="h-6" />

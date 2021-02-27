@@ -2,50 +2,37 @@ import { useContext, useEffect } from "react"
 import { NavContext } from "../../contexts/NavContextProvider"
 import { useWindowScroll } from "react-use"
 
-const NavMenu = ({ addClass }) => {
-    const { navDatas, secRef, changeNavBtn, navBtn, changeNavToggle } = useContext(NavContext)
+const NavMenu = () => {
+    const { navs, secRef, changeNavBtn, navBtn, changeNavToggle } = useContext(NavContext)
     const { y: pageYOffset } = useWindowScroll()
 
     const btnHandler = (value) => {
-        navDatas.forEach((data, index) => {
-            if (value === index) {
-                const position: number = secRef[value].current.offsetTop
-                window.scrollTo({ top: position - 50, behavior: "smooth" })
-            }
+        navs.forEach((nav, index) => {
+            value === index && window.scrollTo({
+                top: secRef[value].current.offsetTop - 50, behavior: "smooth"
+            })
         })
     }
 
-
     useEffect(() => {
-        const position = navDatas.map((data, index) => {
-            return secRef[index].current.offsetTop + secRef[index].current.offsetHeight - 100
+        navs.forEach((nav, index) => {
+            const startPosition = (params) => secRef[params].current.offsetTop - 100
+            const endPosition = (params) => secRef[params].current.offsetTop + secRef[params].current.offsetHeight - 100
+            const onPosition = pageYOffset < endPosition(index) && pageYOffset > startPosition(index)
+            onPosition && changeNavBtn(index)
         })
-        if (pageYOffset < position[0]) {
-            changeNavBtn(0)
-        } else if (pageYOffset >= position[0] && pageYOffset < position[1]) {
-            changeNavBtn(1)
-        } else if (pageYOffset >= position[1] && pageYOffset < position[2]) {
-            changeNavBtn(2)
-        } else if (pageYOffset >= position[2] && pageYOffset < position[3]) {
-            changeNavBtn(3)
-        }
-
         changeNavToggle(false)
     }, [pageYOffset])
 
-    const menu = navDatas.map((data, index) => (
+    const navlist = navs.map((nav, index) => (
         <a onClick={() => btnHandler(index)}
-            id={`#nav${index}`}
-            key={index}
-            className={`${addClass} ${navBtn == index ? "bg-purple-600 text-white" : "text-gray-800"} 
-        hover:bg-purple-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer hover:transition-opacity duration-500 ease-in-out
-        `}>{data}</a>)
+            key={nav}
+            className={`${navBtn == index ? "bg-purple-600 text-white" : "text-gray-800"} 
+            block md:inline hover:bg-purple-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer hover:transition-opacity duration-500 ease-in-out
+        `}>{nav}</a>)
     )
-    return (
-        <>
-            {menu}
-        </>
-    )
+    return <> {navlist} </>
+
 }
 
 export default NavMenu

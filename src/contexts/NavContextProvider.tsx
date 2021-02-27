@@ -2,25 +2,21 @@ import { createContext, MutableRefObject, useRef, useState, ReactNode, FC } from
 
 type NavContextType = {
     secRef: MutableRefObject<any>[]
-    navDatas: string[]
+    navs: string[]
     navBtn: number
     changeNavBtn: (value: number) => void
     navToggle: boolean
     changeNavToggle: (value: boolean) => void
 };
 
-
-
 export const NavContext = createContext<NavContextType | undefined>(undefined);
 
 const NavContextProvider: FC<ReactNode> = ({ children }) => {
 
-    const [navDatas, setNavDatas] = useState(["Home", "Spesifikasi", "Paket", "Layanan"])
+    const [navs, setNavs] = useState(["Home", "Spesifikasi", "Paket", "Layanan"])
     const [navBtn, setNavBtn] = useState(0)
     const [navToggle, setNavToggle] = useState(false)
-    const secRef = navDatas.map(() => {
-        return useRef()
-    })
+    const secRef = navs.map(() => useRef())
     const changeNavBtn = (value) => {
         setNavBtn(value)
     }
@@ -28,7 +24,7 @@ const NavContextProvider: FC<ReactNode> = ({ children }) => {
         setNavToggle(value)
     }
     return (
-        <NavContext.Provider value={{ navDatas, secRef, navBtn, changeNavBtn, navToggle, changeNavToggle }}>
+        <NavContext.Provider value={{ navs, secRef, navBtn, changeNavBtn, navToggle, changeNavToggle }}>
             {children}
         </NavContext.Provider>
     )

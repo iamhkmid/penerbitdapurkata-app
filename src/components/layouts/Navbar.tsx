@@ -22,7 +22,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
-                                <NavMenu addClass="" />
+                                <NavMenu />
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
             <div className={`${navToggle === true ? "block" : "hidden"} md:hidden`} >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <NavMenu addClass="block" />
+                    <NavMenu />
                 </div>
 
             </div>

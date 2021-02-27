@@ -40,8 +40,12 @@ const Section1 = forwardRef(() => {
                             <div className="flex place-content-center my-7 font-roboto">
                                 {BtnData.map((data, i) => {
                                     const btnLink = data.link === "btnHandler" ?
-                                        <MainBtn link={undefined} handler={btnHandler} name={data.name} />
-                                        : <MainBtn link={data.link} handler={undefined} name={data.name} />
+                                        <div key={data.name}>
+                                            <MainBtn link={undefined} handler={btnHandler} name={data.name} />
+                                        </div>
+                                        : <div key={data.name}>
+                                            <MainBtn link={data.link} handler={undefined} name={data.name} />
+                                        </div>
 
                                     return btnLink
                                 })}
@@ -54,7 +58,7 @@ const Section1 = forwardRef(() => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 })
 
