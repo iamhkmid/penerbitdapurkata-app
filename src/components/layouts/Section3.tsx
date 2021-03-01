@@ -3,33 +3,13 @@ import NumberFormat from "react-number-format"
 import { NavContext } from "../../contexts/NavContextProvider"
 import { getSectionEl } from "./getSectionEl"
 
-const paketHarga = {
-    message: "Pilih paket terbitmu & rasakanlah kemudahan menerbitkan karya.",
-    eks: [30, 50, 100, 125, 150, 200],
-    hal: [80, 100, 120, 150, 200],
-    data: [
-        { eks: 30, hal: 80, harga: 66500 }, { eks: 30, hal: 100, harga: 69200 },
-        { eks: 30, hal: 120, harga: 73800 }, { eks: 30, hal: 150, harga: 83500 },
-        { eks: 30, hal: 200, harga: 88200 },
-        { eks: 50, hal: 80, harga: 49500 }, { eks: 50, hal: 100, harga: 54200 },
-        { eks: 50, hal: 120, harga: 59800 }, { eks: 50, hal: 150, harga: 66500 },
-        { eks: 50, hal: 200, harga: 68200 },
-        { eks: 100, hal: 80, harga: 38500 }, { eks: 100, hal: 100, harga: 41200 },
-        { eks: 100, hal: 120, harga: 45800 }, { eks: 100, hal: 150, harga: 49500 },
-        { eks: 100, hal: 200, harga: 53200 },
-        { eks: 125, hal: 80, harga: 36500 }, { eks: 125, hal: 100, harga: 38200 },
-        { eks: 125, hal: 120, harga: 42800 }, { eks: 125, hal: 150, harga: 46500 },
-        { eks: 125, hal: 200, harga: 49200 },
-        { eks: 150, hal: 80, harga: 34500 }, { eks: 150, hal: 100, harga: 36200 },
-        { eks: 150, hal: 120, harga: 40800 }, { eks: 150, hal: 150, harga: 44500 },
-        { eks: 150, hal: 200, harga: 47200 },
-        { eks: 200, hal: 80, harga: 31500 }, { eks: 200, hal: 100, harga: 33200 },
-        { eks: 200, hal: 120, harga: 37800 }, { eks: 200, hal: 150, harga: 41500 },
-        { eks: 200, hal: 200, harga: 44200 },
-    ]
+import { paketHarga } from "../../types/type"
+
+type props = {
+    paketHarga: paketHarga
 }
 
-const Section3 = forwardRef(() => {
+const Section3 = forwardRef(({ paketHarga }: props, ref) => {
     const { secRef } = useContext(NavContext)
     const sectionRef = useRef<HTMLDivElement>(null)
 

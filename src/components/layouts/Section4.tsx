@@ -1,21 +1,12 @@
 import { forwardRef, useContext, useImperativeHandle, useRef } from "react"
 import { NavContext } from "../../contexts/NavContextProvider"
 import { getSectionEl } from "./getSectionEl"
-const contents = [
-    "Layanan ISBN",
-    "Layanan penyutingan (editing)",
-    "Tata letak (layout)",
-    "Desain sampul menarik",
-    "Revisi",
-    "Pembatas buku",
-    "Sertifkat Penulis dan Surat Bukti Penerbitan",
-    "Gambar promosi buku",
-    "Layanan promosi buku di media sosial DapurKata",
-    "Layanan distribusi buku terbit ke Taman Baca Masyarakat (TBM), perpustakaan daerah (perpusda), dan perpustakaan nasional (perpusnas)",
-    "HADIAH MENARIK"
+import { contents } from "../../types/type"
 
-]
-const Section4 = forwardRef(() => {
+type props = {
+    contents: contents
+}
+const Section4 = forwardRef(({ contents }: props, ref) => {
     const { secRef } = useContext(NavContext)
     const sectionRef = useRef<HTMLDivElement>(null)
 

@@ -1,32 +1,13 @@
-import { resolveHref } from "next/dist/next-server/lib/router/router"
 import { forwardRef, MutableRefObject, useContext, useImperativeHandle, useRef } from "react"
 import { NavContext } from "../../contexts/NavContextProvider"
 import { getSectionEl } from "./getSectionEl"
-import { FaBookOpen, } from "react-icons/fa";
-import { IconContext } from "react-icons/lib";
+import { spesifikasi } from '../../types/type'
 
-const naskahSpecs = [
-    {
-        name: 'isi',
-        warna: "Hitam-Putih",
-        jenisKertas: "Bookpaper 72g/HVS 70g/HVS 80g",
-        ukuran: "A5"
-    },
-    {
-        name: "sampul",
-        warna: "Fullcolor",
-        jenisKertas: "Ivory 260 gram",
-        laminasi: "Dof/Glossy"
-    },
-    {
-        name: "finalisasi",
-        values: ["Sampul kertas (softcover binding)",
-            "Penjilidan (Binding)",
-            "shrink"]
-    }
-]
+type props = {
+    spesifikasi: spesifikasi
+}
 
-const Section2 = forwardRef(() => {
+const Section2 = forwardRef((props: props, ref) => {
     const { secRef } = useContext(NavContext)
     const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -40,7 +21,7 @@ const Section2 = forwardRef(() => {
                 <h1 className="text-3xl font-bold uppercase text-center text-gray-900">Spesifikasi Naskah</h1>
                 <hr className="text-gray-500 border-t-2 border-gray-300 mx-24 pb-8"></hr>
                 <div className="flex  flex-col md:flex-row justify-items-center items-center place-content-evenly px-5 ">
-                    {naskahSpecs.map((data, index) => (
+                    {props.spesifikasi.map((data, index) => (
                         <div key={data.name} className="md:w-1/3 group text-gray-900 hover:bg-gray-50 border-transparent border-4 hover:border-indigo-200 rounded-md cursor-default my-5">
 
                             {data.name === "isi" ?
