@@ -19,14 +19,14 @@ const data = {
             name: "sampul",
             warna: "Fullcolor",
             jenisKertas: "Ivory 260g",
-            laminasi: "Dof/Glossy",
+            laminasi: "Doff/Glossy",
             att:"*pilih salah satu"
         },
         {
             name: "finalisasi",
             values: [["Sampul kertas"," (softcover binding)"],
                 ["Penjilidan"," (Binding)"],
-                ["shrink",""]
+                ["Shrink",""]
             ]
         }
     ],
