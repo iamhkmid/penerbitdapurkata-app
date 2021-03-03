@@ -24,7 +24,7 @@ const Section3 = forwardRef(({ paketHarga }: props, ref) => {
   return (
     <div
       ref={sectionRef}
-      className="py-14 bg-white font-roboto text-gray-800 min-h-screen flex flex-col place-content-center"
+      className="py-14 bg-white font-roboto text-gray-800 md:min-h-screen flex flex-col place-content-center"
     >
       <div>
         <h1 className="text-3xl font-bold uppercase text-center ">
@@ -95,7 +95,7 @@ const Section3 = forwardRef(({ paketHarga }: props, ref) => {
         </div>
       </div>
       <div>
-        <h1 className="text-6xl font-bold text-center pt-7 text-gray-600 uppercase">
+        <h1 className="text-xl md:text-6xl font-bold text-center pt-7 text-gray-600 uppercase">
           Subsidi Ongkir Hingga 500rb !!!
         </h1>
       </div>
