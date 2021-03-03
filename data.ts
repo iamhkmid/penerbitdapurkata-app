@@ -2,30 +2,32 @@ const data = {
     section1: {
         text1: "PENERBIT DAPURKATA",
         text2: '"Di sini, naskahmu diracik dengan sempurna."',
-        text3: '"Dalam banyak diskusi tentang perubahan zaman, buku selalu mendapat tempat khusus sebagai energi penggerak manusia untuk menciptakan sesuatu. Dari sini, kita paham bahwa buku selalu hadir sebagai bagian penting dalam peradaban.Bersama buku, kita menyempurnakan kemanusiaan.Bersama buku, kita mendorong perubahan.Tindakan ini dimulai dari kita, dimulai dari Anda.Mari berkolaborasi menciptakan buku - buku terbaik! Buku Anda akan menjadi bagian dari sejarah."',
+        text3: '"Dalam banyak diskusi tentang perubahan zaman, buku selalu mendapat tempat khusus sebagai energi penggerak manusia untuk menciptakan sesuatu. Dari sini, kita paham bahwa buku selalu hadir sebagai bagian penting dalam peradaban. Bersama buku, kita menyempurnakan kemanusiaan. Bersama buku, kita mendorong perubahan. Tindakan ini dimulai dari kita, dimulai dari Anda. Mari berkolaborasi menciptakan buku - buku terbaik! Buku Anda akan menjadi bagian dari sejarah."',
         btnData: [
             { name: "Pesan Sekarang", link: "https://wa.link/lc00fi" },
-            { name: "Kenali Lebih Jauh", link: "btnHandler" },
+            { name: "Paket Penerbitan", link: "btnHandler" },
         ]
     },
     spesifikasi: [
         {
             name: 'isi',
             warna: "Hitam-Putih",
-            jenisKertas: "Bookpaper 72g/HVS 70g/HVS 80g",
+            jenisKertas: ["Bookpaper"," 72g/HVS 70g/HVS 80g"],
             ukuran: "A5"
         },
         {
             name: "sampul",
             warna: "Fullcolor",
-            jenisKertas: "Ivory 260 gram",
-            laminasi: "Dof/Glossy"
+            jenisKertas: "Ivory 260g",
+            laminasi: "Dof/Glossy",
+            att:"*pilih salah satu"
         },
         {
             name: "finalisasi",
-            values: ["Sampul kertas (softcover binding)",
-                "Penjilidan (Binding)",
-                "shrink"]
+            values: [["Sampul kertas"," (softcover binding)"],
+                ["Penjilidan"," (Binding)"],
+                ["shrink",""]
+            ]
         }
     ],
     paketHarga: {
@@ -65,6 +67,10 @@ const data = {
         "Layanan promosi buku di media sosial DapurKata",
         "Layanan distribusi buku terbit ke Taman Baca Masyarakat (TBM), perpustakaan daerah (perpusda), dan perpustakaan nasional (perpusnas)",
         "HADIAH MENARIK"
-    ]
+    ],
+   footer : {
+    alamat: "Jln. Dahlia Dalam 1 No. 446 RT/RW 003/001, kel. Bukit Merapin, kec. Gerunggang Pangkalpinang Kepulauan Bangka Belitung 33123 Indonesia",
+    noWa: "0812-7327-2469"
+   }
 }
 export default data

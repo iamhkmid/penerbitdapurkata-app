@@ -12,16 +12,19 @@ export type spesifikasi = [
     {
         name: string
         warna: string
-        jenisKertas: string
+        jenisKertas: string[]
         ukuran: string
     } & {
         name: string
         warna: string
         jenisKertas: string
         laminasi: string
+        att:string
     } & {
         name: string
-        values: string[]
+        values: [
+            string[]
+        ]
     }
 ]
 
